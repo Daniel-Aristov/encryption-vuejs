@@ -12,7 +12,7 @@
     "esModuleInterop": true,
     "strict": true,
     "target": "esnext",
-    "types": ["vite/client"],
+    "types": ["vite/client", "element-plus/global"],
     "module": "esnext",
     "lib": ["es2016", "dom", "es2020"],
     "allowJs": true,
