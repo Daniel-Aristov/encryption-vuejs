@@ -1,43 +1,31 @@
 <template>
-    <div class="mb-4">
-    <el-button>Default</el-button>
-    <el-button type="primary">Primary</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
-    <el-button type="danger">Danger</el-button>
-  </div>
-
-  <div class="mb-4">
-    <el-button plain>Plain</el-button>
-    <el-button type="primary" plain>Primary</el-button>
-    <el-button type="success" plain>Success</el-button>
-    <el-button type="info" plain>Info</el-button>
-    <el-button type="warning" plain>Warning</el-button>
-    <el-button type="danger" plain>Danger</el-button>
-  </div>
-
-  <div class="mb-4">
-    <el-button round>Round</el-button>
-    <el-button type="primary" round>Primary</el-button>
-    <el-button type="success" round>Success</el-button>
-    <el-button type="info" round>Info</el-button>
-    <el-button type="warning" round>Warning</el-button>
-    <el-button type="danger" round>Danger</el-button>
-  </div>
-
-  <div>
-    <el-button :icon="Search" circle />
-    <el-button type="primary" :icon="Edit" circle />
-    <el-button type="success" :icon="Check" circle />
-    <el-button type="info" :icon="Message" circle />
-    <el-button type="warning" :icon="Star" circle />
-    <el-button type="danger" :icon="Delete" circle />
+  <div class="min-h-screen flex items-center justify-center">
+    <el-tabs v-model="activeTab">
+      <el-tab-pane label="Шифр Цезаря" name="caesar">
+        <CaesarCipher />
+      </el-tab-pane>
+      <el-tab-pane label="Алгоритм RSA" name="rsa">
+        <RSACipher />
+      </el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
-<script setup lang="ts">
-</script>
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
+import CaesarCipher from '@/components/CaesarCipher.vue'
+import RSACipher from '@/components/RSACipher.vue'
 
-<style scoped>
-</style>
+export default defineComponent({
+  name: 'App',
+  components: {
+    CaesarCipher,
+    RSACipher
+  },
+  data() {
+    return {
+      activeTab: 'caesar'
+    }
+  }
+})
+</script>
