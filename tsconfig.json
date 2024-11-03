@@ -16,7 +16,7 @@
     "module": "esnext",
     "lib": ["es2016", "dom", "es2020"],
     "allowJs": true,
-    "outDir": "/dist",
+    "outDir": "./dist",
     "moduleResolution": "node"
   },
   "include": ["src/**/*"],
