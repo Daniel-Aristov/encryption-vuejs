@@ -1,10 +1,10 @@
 <template>
   <div class="mx-auto p-4">
     <div
-      class="w-full border-[2px] border-[#6C38CC] rounded-2xl px-[70px] py-[40px]"
+      class="w-full min-h-[685px] max-h-[685px] border-[2px] border-[#6C38CC] rounded-2xl px-[70px] py-[40px]"
     >
       <h2 class="text-xl font-semibold mb-[20px]">Шифр Цезаря</h2>
-      <p class="max-w-[800px] text-[16px] mb-[30px]">
+      <p class="max-w-[1000px] text-[16px] mb-[30px]">
         Для шифрования и дешифрования поддерживаются только буквы русского
         алфавита. Заглавные и строчные буквы шифруются одинаково. Специальные
         символы и числа остаются без изменений.
@@ -23,7 +23,7 @@
             <textarea
               v-model="form.text"
               @input="validateInput"
-              class="min-w-[400px] text-[16px] color-[#F7F7F7] bg-[#1E1F29] border-[2px] border-[#999999] focus:border-[#6C38CC] transition-all outline-none rounded-md p-[10px] resize-none"
+              class="min-w-[450px] text-[16px] color-[#F7F7F7] bg-[#1E1F29] border-[2px] border-[#999999] focus:border-[#6C38CC] transition-all outline-none rounded-md p-[10px] resize-none"
               :rows="9"
               maxlength="500000"
               :placeholder="
@@ -40,7 +40,7 @@
             <p class="mb-2">Результат:</p>
             <div
               v-if="enumerationResult.length"
-              class="min-w-[400px] h-[240px] overflow-x-hidden overflow-y-auto scroll-smooth border-[2px] border-[#999999] rounded-md p-[10px]"
+              class="min-w-[450px] h-[240px] overflow-x-hidden overflow-y-auto scroll-smooth border-[2px] border-[#999999] rounded-md p-[10px]"
             >
               <ul class="list-disc pl-5">
                 <li
@@ -55,8 +55,9 @@
             <textarea
               v-else
               v-model="result"
-              class="min-w-[400px] text-[16px] color-[#F7F7F7] bg-[#1E1F29] border-[2px] border-[#999999] outline-none rounded-md p-[10px] resize-none"
+              class="min-w-[450px] text-[16px] color-[#F7F7F7] bg-[#1E1F29] border-[2px] border-[#999999] outline-none rounded-md p-[10px] resize-none"
               :rows="9"
+              maxlength="500000"
               readonly
               :placeholder="
                 isEncryption ? 'Зашифрованный текст' : 'Расшифрованный текст'
@@ -90,7 +91,7 @@
             />
           </div>
         </div>
-        <div class="mt-[30px]">
+        <div :class="isEncryption ? 'mt-[30px]' : 'mt-[15px]'">
           <el-button
             v-if="!form.notHaveKey"
             class="bg-[#6C38CC] hover:bg-[#5930a5] transition-all rounded-md border-none px-[50px] py-[20px]"
@@ -179,50 +180,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style scoped>
-.el-icon {
-  height: 2em;
-  width: 2em;
-}
-
-.el-icon svg {
-  height: 2em;
-  width: 2em;
-}
-
-.el-input {
-  --el-input-text-color: #f7f7f7;
-}
-
-.el-input.is-disabled {
-  --el-input-border-color: #f7f7f7;
-  opacity: 0.7;
-}
-
-.el-input__wrapper {
-  background-color: #1e1f29;
-}
-
-.el-input.is-disabled .el-input__wrapper {
-  background-color: #1e1f29;
-}
-
-.el-input-number__decrease,
-.el-input-number__increase {
-  background: #1e1f29;
-}
-
-.el-switch__label * {
-  font-size: 16px;
-}
-
-.el-switch__core {
-  background: #1e1f29;
-}
-
-.el-switch.is-checked .el-switch__core {
-  background-color: #6c38cc;
-  border-color: #6c38cc;
-}
-</style>

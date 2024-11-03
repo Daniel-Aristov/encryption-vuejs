@@ -23,11 +23,56 @@ body {
 
 html * {
   scrollbar-width: thin;
-  scrollbar-color: #6c38cc #1e1f29;
+  scrollbar-color: $accent-color $bg-color;
 }
 
 *::-webkit-scrollbar,
 html *::-webkit-scrollbar {
   height: 12px;
   width: 12px;
+}
+
+.el-icon {
+  height: 2em;
+  width: 2em;
+}
+
+.el-icon svg {
+  height: 2em;
+  width: 2em;
+}
+
+.el-input {
+  --el-input-text-color: $text-color;
+}
+
+.el-input.is-disabled {
+  --el-input-border-color: $text-color;
+  opacity: 0.7;
+}
+
+.el-input__wrapper {
+  background-color: $bg-color;
+}
+
+.el-input.is-disabled .el-input__wrapper {
+  background-color: $bg-color;
+}
+
+.el-input-number__decrease,
+.el-input-number__increase {
+  background: $bg-color;
+}
+
+.el-switch__label * {
+  font-size: 16px;
+}
+
+.el-switch__core {
+  background: $bg-color;
+}
+
+.el-switch.is-checked .el-switch__core {
+  background-color: $accent-color;
+  border-color: $accent-color;
 }
