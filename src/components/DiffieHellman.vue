@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto p-4">
     <div
-      class="w-full min-h-[685px] border-[2px] border-[#6C38CC] rounded-2xl px-[70px] py-[40px]"
+      class="w-full min-h-[600px] max-h-[600px] border-[2px] border-[#6C38CC] rounded-2xl px-[70px] py-[40px]"
     >
       <h2 class="text-xl font-semibold mb-[20px]">Протокол Диффи-Хеллмана</h2>
       <div class="flex justify-center items-start gap-[20px]">

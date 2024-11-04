@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto p-4">
     <div
-      class="w-full min-h-[685px] border-[2px] border-[#6C38CC] rounded-2xl px-[70px] py-[40px]"
+      class="w-full min-h-[600px] max-h-[600px] border-[2px] border-[#6C38CC] rounded-2xl px-[70px] py-[40px]"
     >
       <h2 class="text-xl font-semibold mb-[20px]">Алгоритм RSA</h2>
       <p class="max-w-[1000px] text-[16px] mb-[30px]">
@@ -15,8 +15,8 @@
           <p class="mb-2">Введите текст:</p>
           <textarea
             v-model="form.text"
-            class="min-w-[450px] text-[16px] color-[#F7F7F7] bg-[#1E1F29] border-[2px] border-[#999999] focus:border-[#6C38CC] transition-all outline-none rounded-md p-[10px] resize-none"
-            :rows="8"
+            class="min-w-[500px] text-[16px] color-[#F7F7F7] bg-[#1E1F29] border-[2px] border-[#999999] focus:border-[#6C38CC] transition-all outline-none rounded-md p-[10px] resize-none"
+            :rows="7"
             placeholder="Текст для шифрования/дешифрования"
           />
         </div>
@@ -24,14 +24,14 @@
           <p class="mb-2">Результат:</p>
           <textarea
             v-model="result"
-            class="min-w-[450px] text-[16px] color-[#F7F7F7] bg-[#1E1F29] border-[2px] border-[#999999] outline-none rounded-md p-[10px] resize-none"
-            :rows="8"
+            class="min-w-[500px] text-[16px] color-[#F7F7F7] bg-[#1E1F29] border-[2px] border-[#999999] outline-none rounded-md p-[10px] resize-none"
+            :rows="7"
             readonly
             placeholder="Результат шифрования/дешифрования"
           />
         </div>
       </div>
-      <div class="flex flex-col gap-[15px]">
+      <div class="flex flex-row justify-start items-center gap-[15px]">
         <el-button
           @click="generateKeys"
           class="max-w-[300px] bg-[#6C38CC] hover:bg-[#5930a5] transition-all rounded-md border-none px-[50px] py-[20px]"
