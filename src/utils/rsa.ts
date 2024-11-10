@@ -6,8 +6,6 @@ export function generateRSAKeys() {
   const e = getE(phi);
   const d = modInverse(e, phi);
 
-	console.log(p, q, n, phi, e, d);
-
   return {
     publicKey: { e, n },
     privateKey: { d, n }
